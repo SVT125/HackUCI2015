@@ -1,16 +1,16 @@
 package tjjj.com.hackuci2015;
 
-import java.io.File;
+import android.net.Uri;
 
 public class ClipCell {
     private String textTranslation, caller, timeCalled;
-    private File clip;
+    private Uri clip;
 
-    public File getClip() {
+    public Uri getClip() {
         return clip;
     }
 
-    public void setClip(File clip) {
+    public void setClip(Uri clip) {
         this.clip = clip;
     }
 
