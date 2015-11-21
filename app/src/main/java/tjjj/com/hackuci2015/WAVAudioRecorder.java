@@ -23,7 +23,7 @@ public class WAVAudioRecorder
         if(recordingCompressed)
         {
             result = new WAVAudioRecorder(    false,
-                    AudioSource.MIC,
+                    AudioSource.CAMCORDER,
                     sampleRates[3],
                     AudioFormat.CHANNEL_CONFIGURATION_MONO,
                     AudioFormat.ENCODING_PCM_16BIT);
@@ -34,7 +34,7 @@ public class WAVAudioRecorder
             do
             {
                 result = new WAVAudioRecorder(    true,
-                        AudioSource.MIC,
+                        AudioSource.CAMCORDER,
                         sampleRates[i],
                         AudioFormat.CHANNEL_CONFIGURATION_MONO,
                         AudioFormat.ENCODING_PCM_16BIT);
@@ -197,7 +197,7 @@ public class WAVAudioRecorder
                 framePeriod = sampleRate * TIMER_INTERVAL / 1000;
                 bufferSize = framePeriod * 2 * bSamples * nChannels / 8;
                 if (bufferSize < AudioRecord.getMinBufferSize(sampleRate, channelConfig, audioFormat))
-                { // Check to make sure buffer size is not smaller than the smallest allowed one 
+                { // Check to make sure buffer size is not smaller than the smallest allowed one
                     bufferSize = AudioRecord.getMinBufferSize(sampleRate, channelConfig, audioFormat);
                     // Set frame period and timer interval accordingly
                     framePeriod = bufferSize / ( 2 * bSamples * nChannels / 8 );
@@ -213,7 +213,7 @@ public class WAVAudioRecorder
             } else
             { // RECORDING_COMPRESSED
                 mediaRecorder = new MediaRecorder();
-                mediaRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
+                mediaRecorder.setAudioSource(AudioSource.CAMCORDER);
                 mediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
                 mediaRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
             }
@@ -271,7 +271,7 @@ public class WAVAudioRecorder
      *
      * Returns the largest amplitude sampled since the last call to this method.
      *
-     * @return returns the largest amplitude since the last call, or 0 when not in recording state. 
+     * @return returns the largest amplitude since the last call, or 0 when not in recording state.
      *
      */
     public int getMaxAmplitude()
@@ -327,7 +327,7 @@ public class WAVAudioRecorder
 
                         randomAccessWriter.setLength(0); // Set file length to 0, to prevent unexpected behavior in case the file already existed
                         randomAccessWriter.writeBytes("RIFF");
-                        randomAccessWriter.writeInt(0); // Final file size not known yet, write 0 
+                        randomAccessWriter.writeInt(0); // Final file size not known yet, write 0
                         randomAccessWriter.writeBytes("WAVE");
                         randomAccessWriter.writeBytes("fmt ");
                         randomAccessWriter.writeInt(Integer.reverseBytes(16)); // Sub-chunk size, 16 for PCM
@@ -444,7 +444,7 @@ public class WAVAudioRecorder
                 else
                 {
                     mediaRecorder = new MediaRecorder();
-                    mediaRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
+                    mediaRecorder.setAudioSource(AudioSource.CAMCORDER);
                     mediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
                     mediaRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
                 }

@@ -102,7 +102,7 @@ public class MainActivity extends Activity implements ISpeechRecognitionServerEv
 
         m_waitSeconds = m_recoMode == SpeechRecognitionMode.ShortPhrase ? 20 : 200;
 
-        initializeRecoClient();
+        //initializeRecoClient();
     }
 
     @Override
@@ -161,6 +161,18 @@ public class MainActivity extends Activity implements ISpeechRecognitionServerEv
         Intent intent = new Intent(this,CallClipsActivity.class);
         startActivity(intent);
         finish();
+    }
+
+    public void lastCallClick(View v) {
+        //set up MediaPlayer
+        MediaPlayer mp = new MediaPlayer();
+        try {
+            mp.setDataSource(MainActivity.this.getFilesDir().getPath() + "callRecording.wav");
+            mp.prepare();
+            mp.start();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     void addListenerOnButton()

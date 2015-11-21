@@ -33,4 +33,13 @@
         android:layout_below="@+id/call_button"
         android:layout_centerHorizontal="true"
         android:onClick="clipsClick" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Play last call"
+        android:id="@+id/button"
+        android:layout_below="@+id/clips_button"
+        android:layout_centerHorizontal="true"
+        android:onClick="lastCallClick" />
 </RelativeLayout>
