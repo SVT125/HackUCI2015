@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">HackUCI2015</string>
+    <string name="app_name">Friendboard</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_call_clips">CallClipsActivity</string>
     <string name="title_activity_soundboard">SoundboardActivity</string>

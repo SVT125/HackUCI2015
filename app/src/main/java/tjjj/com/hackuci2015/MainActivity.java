@@ -5,22 +5,75 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
+import android.media.MediaPlayer;
 import android.media.MediaRecorder;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.telephony.PhoneStateListener;
+import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
 public class MainActivity extends Activity {
-    public static final int REQUEST_RECORDING = 1;
-    MediaRecorder recorder = null;
+    WAVAudioRecorder recorder = null;
+
+    //monitor phone call activities
+    private class PhoneCallListener extends PhoneStateListener {
+
+        private boolean isPhoneCalling = false;
+
+        String LOG_TAG = "Logging calls";
+
+        @Override
+        public void onCallStateChanged(int state, String incomingNumber) {
+            if (TelephonyManager.CALL_STATE_RINGING == state) {
+                // phone ringing
+                Log.i(LOG_TAG, "RINGING, number: " + incomingNumber);
+                isPhoneCalling = true;
+            }
+
+            if (TelephonyManager.CALL_STATE_OFFHOOK == state) {
+                // active
+                Log.i(LOG_TAG, "OFFHOOK");
+
+            }
+
+            if (TelephonyManager.CALL_STATE_IDLE == state) {
+                // run when class initial and phone call ended,
+                // need detect flag from CALL_STATE_OFFHOOK
+                Log.i(LOG_TAG, "IDLE");
+
+                if (isPhoneCalling) {
+                    recorder.stop();
+                    isPhoneCalling = false;
+
+                    //TODO - Progress dialog for processing the call file...
+
+                    //TODO - Process the call!
+
+                    //set up MediaPlayer
+                    MediaPlayer mp = new MediaPlayer();
+
+                    try {
+                        mp.setDataSource(MainActivity.this.getFilesDir().getPath() + "callRecording.wav");
+                        mp.prepare();
+                        mp.start();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+
+            }
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,28 +110,28 @@ public class MainActivity extends Activity {
             recorder = null;
         }
 
-        recorder = new MediaRecorder();
-        recorder.setAudioSource(MediaRecorder.AudioSource.MIC);
-        recorder.setOutputFormat(MediaRecorder.OutputFormat.MPEG_4);
-        recorder.setAudioEncoder(MediaRecorder.AudioEncoder.AAC);
-        File file = new File(this.getFilesDir().getPath() + "audio.mp4");
+        recorder = new WAVAudioRecorder(false,0,0,0,0);
+        File file = new File(this.getFilesDir().getPath() + "callRecording.wav");
         recorder.setOutputFile(file.getAbsolutePath());
-        try {
-            recorder.prepare();
-        } catch (IOException e) {
-            Log.e("MediaRecorder", "io problems while preparing [" +
-                    file.getAbsolutePath() + "]: " + e.getMessage());
-        }
+        recorder.prepare();
 
         recorder.start();
 
         //TODO - Initiate call!
+        PhoneCallListener phoneListener = new PhoneCallListener();
+        TelephonyManager telephonyManager = (TelephonyManager) this
+                .getSystemService(Context.TELEPHONY_SERVICE);
+        telephonyManager.listen(phoneListener, PhoneStateListener.LISTEN_CALL_STATE);
 
-        recorder.stop();
+        EditText phoneText = (EditText) findViewById(R.id.phone_number_view);
+        Intent callIntent = new Intent(Intent.ACTION_CALL);
+        callIntent.setData(Uri.parse("tel:" + phoneText.getText()));
 
-        //TODO - Progress dialog for processing the call file...
-
-        //TODO - Process the call!
+        try {
+            startActivity(callIntent);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void clipsClick(View v) {

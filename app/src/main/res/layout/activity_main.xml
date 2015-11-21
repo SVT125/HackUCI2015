@@ -21,7 +21,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:inputType="phone"
         android:hint="Phone Number"
-        android:id="@+id/textView"
+        android:id="@+id/phone_number_view"
         android:layout_above="@+id/call_button"
         android:layout_centerHorizontal="true" />
 
