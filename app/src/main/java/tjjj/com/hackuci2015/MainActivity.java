@@ -30,6 +30,7 @@ import com.microsoft.projectoxford.speechrecognition.SpeechRecognitionServiceFac
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.concurrent.TimeUnit;
 
 public class MainActivity extends Activity implements ISpeechRecognitionServerEvents {
     WAVAudioRecorder recorder = null;
@@ -160,6 +161,55 @@ public class MainActivity extends Activity implements ISpeechRecognitionServerEv
         Intent intent = new Intent(this,CallClipsActivity.class);
         startActivity(intent);
         finish();
+    }
+
+    void addListenerOnButton()
+    {
+
+        String filename = m_recoMode == SpeechRecognitionMode.ShortPhrase ? "whatstheweatherlike.wav" : "batman.wav";
+        RecognitionTask doDataReco = new RecognitionTask(m_dataClient, m_recoMode, filename);
+        try
+        {
+            doDataReco.execute().get(m_waitSeconds, TimeUnit.SECONDS);
+        }
+        catch (Exception e)
+        {
+            doDataReco.cancel(true);
+            isReceivedResponse = FinalResponseStatus.Timeout;
+        }
+
+        /*
+        AlertDialog alertDialog;
+        alertDialog = new AlertDialog.Builder(appContext).create();
+        alertDialog.setTitle("Final Response");
+        EditText myEditText = (EditText) findViewById(R.id.editText1);
+
+        if (m_micClient != null) {
+            while (isReceivedResponse == FinalResponseStatus.NotReceived) {
+            }
+            m_micClient.endMicAndRecognition();
+            String msg = isReceivedResponse == FinalResponseStatus.OK ? "See TextBox below for response.  App Done" : "Timed out.  App Done";
+            alertDialog.setMessage(msg);
+            startButton.setEnabled(false);
+            try {
+                m_micClient.finalize();
+            } catch (Throwable e) {
+                myEditText.append(e + "\n");
+            }
+        } else if (m_dataClient != null) {
+            String msg = isReceivedResponse == FinalResponseStatus.OK ? "See TextBox below for response.  App Done" : "Timed out.  App Done";
+            alertDialog.setMessage(msg);
+            startButton.setEnabled(false);
+            try {
+                m_dataClient.finalize();
+            } catch (Throwable e) {
+                myEditText.append(e + "\n");
+            }
+        } else {
+            alertDialog.setMessage("Press Start first please!");
+        }
+        alertDialog.show();
+        */
     }
 
     public void onPartialResponseReceived(final String response) { }

@@ -17,8 +17,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8d18f073-8db3-4b85-bc95-dae1e9795538" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/tjjj/com/hackuci2015/ClipCell.java" afterPath="$PROJECT_DIR$/app/src/main/java/tjjj/com/hackuci2015/ClipCell.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/tjjj/com/hackuci2015/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/tjjj/com/hackuci2015/MainActivity.java" />
     </list>
     <ignored path="HackUCI2015.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -46,27 +45,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/tjjj/com/hackuci2015/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="169" column="45" selection-start-line="169" selection-start-column="45" selection-end-line="169" selection-end-column="45" />
+            <state vertical-scroll-proportion="1.3785425">
+              <caret line="211" column="10" selection-start-line="211" selection-start-column="10" selection-end-line="211" selection-end-column="10" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#10423#10464#0" expanded="true" />
-                <element signature="e#10493#10527#0" expanded="true" />
-                <element signature="e#10565#10608#0" expanded="true" />
+                <element signature="e#12307#12348#0" expanded="true" />
+                <element signature="e#12377#12411#0" expanded="true" />
+                <element signature="e#12449#12492#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="strings.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.254818">
-              <caret line="7" column="68" selection-start-line="7" selection-start-column="68" selection-end-line="7" selection-end-column="68" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -1706,9 +1695,9 @@
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/tjjj/com/hackuci2015/WAVAudioRecorder.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/tjjj/com/hackuci2015/SpeechRecognizer.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/tjjj/com/hackuci2015/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/tjjj/com/hackuci2015/ClipCell.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/tjjj/com/hackuci2015/MainActivity.java" />
       </list>
     </option>
   </component>
@@ -2301,9 +2290,9 @@
           <caret line="50" column="5" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#10423#10464#0" expanded="true" />
-            <element signature="e#10493#10527#0" expanded="true" />
-            <element signature="e#10565#10608#0" expanded="true" />
+            <element signature="e#12307#12348#0" expanded="true" />
+            <element signature="e#12377#12411#0" expanded="true" />
+            <element signature="e#12449#12492#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2363,9 +2352,9 @@
           <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#10423#10464#0" expanded="true" />
-            <element signature="e#10493#10527#0" expanded="true" />
-            <element signature="e#10565#10608#0" expanded="true" />
+            <element signature="e#12307#12348#0" expanded="true" />
+            <element signature="e#12377#12411#0" expanded="true" />
+            <element signature="e#12449#12492#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2486,24 +2475,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/tjjj/com/hackuci2015/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="169" column="45" selection-start-line="169" selection-start-column="45" selection-end-line="169" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#10423#10464#0" expanded="true" />
-            <element signature="e#10493#10527#0" expanded="true" />
-            <element signature="e#10565#10608#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.254818">
           <caret line="7" column="68" selection-start-line="7" selection-start-column="68" selection-end-line="7" selection-end-column="68" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/tjjj/com/hackuci2015/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.3785425">
+          <caret line="211" column="10" selection-start-line="211" selection-start-column="10" selection-end-line="211" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#12307#12348#0" expanded="true" />
+            <element signature="e#12377#12411#0" expanded="true" />
+            <element signature="e#12449#12492#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
