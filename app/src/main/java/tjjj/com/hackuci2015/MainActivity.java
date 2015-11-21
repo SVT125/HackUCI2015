@@ -74,17 +74,17 @@ public class MainActivity extends Activity implements ISpeechRecognitionServerEv
                     isPhoneCalling = false;
 
                     //TODO - Progress dialog for processing the call file...
-
                     //TODO - Process the call!
-
-                    //set up MediaPlayer
-                    MediaPlayer mp = new MediaPlayer();
-                    try {
-                        mp.setDataSource(MainActivity.this.getFilesDir().getPath() + "callRecording.wav");
-                        mp.prepare();
-                        mp.start();
-                    } catch (Exception e) {
-                        e.printStackTrace();
+                    String filename = m_recoMode == SpeechRecognitionMode.ShortPhrase ? "whatstheweatherlike.wav" : "batman.wav";
+                    RecognitionTask doDataReco = new RecognitionTask(m_dataClient, m_recoMode, filename);
+                    try
+                    {
+                        doDataReco.execute().get(m_waitSeconds, TimeUnit.SECONDS);
+                    }
+                    catch (Exception e)
+                    {
+                        doDataReco.cancel(true);
+                        isReceivedResponse = FinalResponseStatus.Timeout;
                     }
                 }
             }
@@ -165,19 +165,6 @@ public class MainActivity extends Activity implements ISpeechRecognitionServerEv
 
     void addListenerOnButton()
     {
-
-        String filename = m_recoMode == SpeechRecognitionMode.ShortPhrase ? "whatstheweatherlike.wav" : "batman.wav";
-        RecognitionTask doDataReco = new RecognitionTask(m_dataClient, m_recoMode, filename);
-        try
-        {
-            doDataReco.execute().get(m_waitSeconds, TimeUnit.SECONDS);
-        }
-        catch (Exception e)
-        {
-            doDataReco.cancel(true);
-            isReceivedResponse = FinalResponseStatus.Timeout;
-        }
-
         /*
         AlertDialog alertDialog;
         alertDialog = new AlertDialog.Builder(appContext).create();
