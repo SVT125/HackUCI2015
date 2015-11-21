@@ -1,7 +1,18 @@
 package tjjj.com.hackuci2015;
 
+import java.io.File;
+
 public class ClipCell {
     private String textTranslation, caller, timeCalled;
+    private File clip;
+
+    public File getClip() {
+        return clip;
+    }
+
+    public void setClip(File clip) {
+        this.clip = clip;
+    }
 
     public String getTextTranslation() {
         return textTranslation;

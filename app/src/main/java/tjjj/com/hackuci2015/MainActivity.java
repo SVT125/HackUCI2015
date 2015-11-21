@@ -1,16 +1,26 @@
 package tjjj.com.hackuci2015;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.media.MediaRecorder;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 public class MainActivity extends Activity {
+    public static final int REQUEST_RECORDING = 1;
+    MediaRecorder recorder = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,30 +51,30 @@ public class MainActivity extends Activity {
     }
 
     public void callClick(View v) {
-        final MediaRecorder callrecorder = new MediaRecorder();
-        callrecorder.setAudioSource(MediaRecorder.AudioSource.VOICE_CALL);
-        callrecorder.setOutputFormat(MediaRecorder.OutputFormat.MPEG_4);
-        callrecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
+        if (recorder != null) {
+            recorder.stop();
+            recorder.release();
+            recorder = null;
+        }
 
-        callrecorder.setOutputFile("call.mp4");
-
+        recorder = new MediaRecorder();
+        recorder.setAudioSource(MediaRecorder.AudioSource.MIC);
+        recorder.setOutputFormat(MediaRecorder.OutputFormat.MPEG_4);
+        recorder.setAudioEncoder(MediaRecorder.AudioEncoder.AAC);
+        File file = new File(this.getFilesDir().getPath() + "audio.mp4");
+        recorder.setOutputFile(file.getAbsolutePath());
         try {
-            callrecorder.prepare();
-        } catch (IllegalStateException e) {
-            e.printStackTrace();
+            recorder.prepare();
         } catch (IOException e) {
-            e.printStackTrace();
+            Log.e("MediaRecorder", "io problems while preparing [" +
+                    file.getAbsolutePath() + "]: " + e.getMessage());
         }
 
-        try {
-            callrecorder.start();
-        } catch(IllegalStateException e) {
-            e.printStackTrace();
-        }
+        recorder.start();
 
         //TODO - Initiate call!
 
-        callrecorder.stop();
+        recorder.stop();
 
         //TODO - Progress dialog for processing the call file...
 

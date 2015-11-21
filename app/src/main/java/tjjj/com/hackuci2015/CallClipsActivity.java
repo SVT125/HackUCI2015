@@ -10,13 +10,16 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class CallClipsActivity extends Activity {
+    ArrayList<ClipCell> cellList = new ArrayList<ClipCell>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,14 +33,28 @@ public class CallClipsActivity extends Activity {
             }
             @Override
             public View getView(int position, View convertView, ViewGroup parent) {
-                ClipCell card = getItem(position);
+                ClipCell cell = getItem(position);
                 if (convertView == null) {
                     convertView = LayoutInflater.from(getContext()).inflate(R.layout.clip_cell_info, parent, false);
                 }
-                //TODO - Initialize each of the fields in the cell...
+
+                TextView translationView = (TextView)findViewById(R.id.translation_text),
+                        infoView = (TextView)findViewById(R.id.info_text);
+                translationView.setText(cell.getTextTranslation());
+
+                String description = cell.getCaller() + "|" + cell.getTimeCalled();
+                infoView.setText(description);
                 return convertView;
             }
         }
+
+        lv.setAdapter(new ClipAdapter(this,cellList));
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                //TODO - Play the clip!
+            }
+        });
     }
 
 }
