@@ -1,9 +1,14 @@
 package tjjj.com.hackuci2015;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.media.MediaRecorder;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+
+import java.io.IOException;
 
 public class MainActivity extends Activity {
 
@@ -33,5 +38,42 @@ public class MainActivity extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void callClick(View v) {
+        final MediaRecorder callrecorder = new MediaRecorder();
+        callrecorder.setAudioSource(MediaRecorder.AudioSource.VOICE_CALL);
+        callrecorder.setOutputFormat(MediaRecorder.OutputFormat.MPEG_4);
+        callrecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
+
+        callrecorder.setOutputFile("call.mp4");
+
+        try {
+            callrecorder.prepare();
+        } catch (IllegalStateException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            callrecorder.start();
+        } catch(IllegalStateException e) {
+            e.printStackTrace();
+        }
+
+        //TODO - Initiate call!
+
+        callrecorder.stop();
+
+        //TODO - Progress dialog for processing the call file...
+
+        //TODO - Process the call!
+    }
+
+    public void clipsClick(View v) {
+        Intent intent = new Intent(this,CallClipsActivity.class);
+        startActivity(intent);
+        finish();
     }
 }

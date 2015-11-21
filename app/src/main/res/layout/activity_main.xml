@@ -5,4 +5,32 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     tools:context="tjjj.com.hackuci2015.MainActivity">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Call"
+        android:id="@+id/call_button"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:onClick="callClick" />
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:inputType="phone"
+        android:hint="Phone Number"
+        android:id="@+id/textView"
+        android:layout_above="@+id/call_button"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Recorded Clips"
+        android:id="@+id/clips_button"
+        android:layout_below="@+id/call_button"
+        android:layout_centerHorizontal="true"
+        android:onClick="clipsClick" />
 </RelativeLayout>
