@@ -3,4 +3,9 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_call_clips">CallClipsActivity</string>
     <string name="title_activity_soundboard">SoundboardActivity</string>
+
+    <!-- API keys -->
+    <string name="subscription_key"></string>
+    <string name="luisAppID"></string>
+    <string name="luisSubscriptionID">/string>
 </resources>
