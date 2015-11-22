@@ -7,13 +7,15 @@
     tools:context="tjjj.com.hackuci2015.MainActivity">
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:text="Call"
+        android:background="#9932CC"
+        android:textColor="#FFFFFF"
         android:id="@+id/call_button"
+        android:onClick="callClick"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:onClick="callClick" />
+        android:layout_centerHorizontal="true" />
 
     <EditText
         android:layout_width="300dp"
@@ -22,24 +24,39 @@
         android:inputType="phone"
         android:hint="Phone Number"
         android:id="@+id/phone_number_view"
-        android:layout_above="@+id/call_button"
+        android:layout_below="@+id/imageView"
         android:layout_centerHorizontal="true" />
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
+        android:background="#9932CC"
+        android:textColor="#FFFFFF"
         android:text="Recorded Clips"
         android:id="@+id/clips_button"
+        android:onClick="clipsClick"
         android:layout_below="@+id/call_button"
         android:layout_centerHorizontal="true"
-        android:onClick="clipsClick" />
+        android:layout_marginTop="14dp" />
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
+        android:background="#9932CC"
+        android:textColor="#FFFFFF"
         android:text="Play last call"
         android:id="@+id/button"
+        android:onClick="lastCallClick"
+        android:layout_marginTop="14dp"
         android:layout_below="@+id/clips_button"
-        android:layout_centerHorizontal="true"
-        android:onClick="lastCallClick" />
+        android:layout_alignEnd="@+id/clips_button" />
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:id="@+id/imageView"
+        android:src="@drawable/logo"
+        android:layout_marginTop="33dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/call_button" />
 </RelativeLayout>
