@@ -31,7 +31,7 @@ public class CallClipsActivity extends Activity {
         ListView lv = (ListView)findViewById(R.id.listView);
 
         Intent intent = getIntent();
-        destinationPath = intent.getStringExtra("destinationPath");
+        String nPath = intent.getStringExtra("destinationPath");
         cellList = intent.getParcelableArrayListExtra("cellList");
         Log.i("Cell list length",""+cellList.size());
 
@@ -47,12 +47,12 @@ public class CallClipsActivity extends Activity {
                     convertView = LayoutInflater.from(CallClipsActivity.this).inflate(R.layout.clip_cell_info, parent, false);
                 }
 
-                TextView translationView = (TextView)findViewById(R.id.translation_text),
-                        infoView = (TextView)findViewById(R.id.info_text);
-                //translationView.setText(cell.getTextTranslation());
+                TextView translationView = (TextView)convertView.findViewById(R.id.translation_text),
+                        infoView = (TextView)convertView.findViewById(R.id.info_text);
+                translationView.setText("Cell " + Integer.toString(position+1));//translationView.setText(cell.getTextTranslation());
 
-                //String description = cell.getCaller() + "|" + cell.getTimeCalled();
-                //infoView.setText(description);
+                String description = cell.getCaller() + "|" + cell.getTimeCalled();
+                infoView.setText(description);
                 return convertView;
             }
         }

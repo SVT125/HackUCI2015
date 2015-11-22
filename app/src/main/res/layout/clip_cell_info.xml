@@ -8,11 +8,13 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:id="@+id/translation_text"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:text="Title" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:id="@+id/info_text" />
+        android:id="@+id/info_text"
+        android:text="Description" />
 </LinearLayout>
