@@ -6,6 +6,4 @@
 
     <!-- API keys -->
     <string name="subscription_key">ee75b2d8989e4b239388a8a335f6605c</string>
-    <string name="luisAppID"></string>
-    <string name="luisSubscriptionID"></string>
 </resources>
