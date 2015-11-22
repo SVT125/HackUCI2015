@@ -26,4 +26,5 @@ dependencies {
     compile 'com.android.support:design:23.1.1'
     compile 'com.microsoft.projectoxford:speechrecognition:0.5.2'
     compile files('libs/SpeechSDK.jar')
+    compile files('libs/musicg-1.4.2.0.jar')
 }

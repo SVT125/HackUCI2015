@@ -13,16 +13,20 @@
     </layouts>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="//outpu//ou" />
-    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8d18f073-8db3-4b85-bc95-dae1e9795538" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/musicg_1_4_2_0.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/cache.properties.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/taskArtifacts.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/tjjj/com/hackuci2015/CallClipsActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/tjjj/com/hackuci2015/CallClipsActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/tjjj/com/hackuci2015/ClipCell.java" afterPath="$PROJECT_DIR$/app/src/main/java/tjjj/com/hackuci2015/ClipCell.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/tjjj/com/hackuci2015/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/tjjj/com/hackuci2015/MainActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="HackUCI2015.iws" />
@@ -54,63 +58,59 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/tjjj/com/hackuci2015/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33739838">
-              <caret line="296" column="20" selection-start-line="296" selection-start-column="20" selection-end-line="296" selection-end-column="20" />
+            <state vertical-scroll-proportion="2.8354166">
+              <caret line="181" column="59" selection-start-line="181" selection-start-column="59" selection-end-line="181" selection-end-column="59" />
               <folding>
                 <element signature="class#FinalResponseStatus#0;class#MainActivity#0" expanded="false" />
-                <element signature="class#PhoneCallListener#0;class#MainActivity#0" expanded="false" />
-                <element signature="method#onCallStateChanged#0;class#PhoneCallListener#0;class#MainActivity#0" expanded="false" />
-                <element signature="e#2442#2489#0" expanded="false" />
-                <element signature="e#2801#2882#0" expanded="false" />
+                <element signature="e#2609#2656#0" expanded="false" />
                 <element signature="method#onCreate#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#onCreateOptionsMenu#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#onOptionsItemSelected#0;class#MainActivity#0" expanded="false" />
-                <element signature="e#4461#4519#0" expanded="false" />
+                <element signature="e#5090#5148#0" expanded="false" />
                 <element signature="method#callClick#0;class#MainActivity#0" expanded="false" />
-                <element signature="method#clipsClick#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#lastCallClick#0;class#MainActivity#0" expanded="false" />
-                <element signature="method#addListenerOnButton#0;class#MainActivity#0" expanded="false" />
+                <element signature="method#onPartialResponseReceived#0;class#MainActivity#0" expanded="false" />
+                <element signature="method#onFinalResponseReceived#0;class#MainActivity#0" expanded="false" />
                 <element signature="docComment;method#onIntentReceived#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#onError#0;class#MainActivity#0" expanded="false" />
                 <element signature="docComment;method#onAudioEvent#0;class#MainActivity#0" expanded="false" />
                 <element signature="docComment;class#RecognitionTask#0;class#MainActivity#0" expanded="false" />
+                <element signature="class#RecognitionTask#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#RecognitionTask#0;class#RecognitionTask#0;class#MainActivity#0" expanded="false" />
+                <element signature="method#doInBackground#0;class#RecognitionTask#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#initializeRecoClient#0;class#MainActivity#0" expanded="false" />
-                <element signature="e#11534#11575#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WAVAudioRecorder.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/tjjj/com/hackuci2015/WAVAudioRecorder.java">
+      <file leaf-file-name="CallClipsActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/tjjj/com/hackuci2015/CallClipsActivity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
+              <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
               <folding>
-                <element signature="method#getInstance#0;class#WAVAudioRecorder#0" expanded="false" />
-                <element signature="docComment;class#State#0;class#WAVAudioRecorder#0" expanded="false" />
-                <element signature="class#State#0;class#WAVAudioRecorder#0" expanded="false" />
-                <element signature="docComment;method#getState#0;class#WAVAudioRecorder#0" expanded="false" />
-                <element signature="class#3697:5182" expanded="false" />
-                <element signature="method#onPeriodicNotification#0;class#3697:5182" expanded="false" />
-                <element signature="method#onMarkerReached#0;class#3697:5182" expanded="false" />
-                <element signature="docComment;method#WAVAudioRecorder#0;class#WAVAudioRecorder#0" expanded="false" />
-                <element signature="method#WAVAudioRecorder#0;class#WAVAudioRecorder#0" expanded="false" />
-                <element signature="docComment;method#setOutputFile#0;class#WAVAudioRecorder#0" expanded="false" />
-                <element signature="method#setOutputFile#0;class#WAVAudioRecorder#0" expanded="false" />
-                <element signature="docComment;method#getMaxAmplitude#0;class#WAVAudioRecorder#0" expanded="false" />
-                <element signature="method#getMaxAmplitude#0;class#WAVAudioRecorder#0" expanded="false" />
-                <element signature="docComment;method#prepare#0;class#WAVAudioRecorder#0" expanded="false" />
-                <element signature="method#prepare#0;class#WAVAudioRecorder#0" expanded="false" />
-                <element signature="docComment;method#release#0;class#WAVAudioRecorder#0" expanded="false" />
-                <element signature="method#release#0;class#WAVAudioRecorder#0" expanded="false" />
-                <element signature="docComment;method#reset#0;class#WAVAudioRecorder#0" expanded="false" />
-                <element signature="method#reset#0;class#WAVAudioRecorder#0" expanded="false" />
-                <element signature="docComment;method#start#0;class#WAVAudioRecorder#0" expanded="false" />
-                <element signature="method#start#0;class#WAVAudioRecorder#0" expanded="false" />
-                <element signature="docComment;method#stop#0;class#WAVAudioRecorder#0" expanded="false" />
-                <element signature="method#stop#0;class#WAVAudioRecorder#0" expanded="false" />
+                <element signature="class#1065:2133" expanded="false" />
+                <element signature="method#ClipAdapter#0;class#1065:2133" expanded="false" />
+                <element signature="method#getView#0;class#1065:2133" expanded="false" />
+                <element signature="e#2224#2455#0" expanded="true" />
+                <element signature="e#2454#2455#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ClipCell.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/tjjj/com/hackuci2015/ClipCell.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="48" column="25" selection-start-line="48" selection-start-column="25" selection-end-line="48" selection-end-column="25" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#445#446#0" expanded="true" />
+                <element signature="e#472#473#0" expanded="true" />
+                <element signature="e#770#771#0" expanded="true" />
+                <element signature="e#799#800#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1334,7 +1334,7 @@
     <option name="modificationStamps">
       <map>
         <entry key="$PROJECT_DIR$/../GermanBridge" value="4312035542906" />
-        <entry key="C:\Users\James\Documents\GitHub\HackUCI2015" value="4344310067077" />
+        <entry key="C:\Users\James\Documents\GitHub\HackUCI2015" value="4344348584418" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -1556,6 +1556,7 @@
                             <option value="$USER_HOME$/AppData/Local/Android/sdk/extras/android/m2repository/com/android/support/support-v4/23.1.1/support-v4-23.1.1.aar" />
                             <option value="$USER_HOME$/AppData/Local/Android/sdk/extras/android/m2repository/com/android/support/recyclerview-v7/23.1.1/recyclerview-v7-23.1.1.aar" />
                             <option value="$USER_HOME$/AppData/Local/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.1.1/support-annotations-23.1.1.jar" />
+                            <option value="$MODULE_DIR$/libs/musicg-1.4.2.0.jar" />
                             <option value="$MODULE_DIR$/libs/SpeechSDK.jar" />
                           </list>
                         </option>
@@ -1701,18 +1702,21 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/clip_cell_inffo.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/ClipCell.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/clip_cell_info.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/tjjj/com/hackuci2015/CallClipsActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/content_soundboard.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/tjjj/com/hackuci2015/SoundboardActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_soundboard.xml" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/java/tjjj/com/hackuci2015/SpeechRecognizer.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/tjjj/com/hackuci2015/ClipCell.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/tjjj/com/hackuci2015/WAVAudioRecorder.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/tjjj/com/hackuci2015/Trim.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/tjjj/com/hackuci2015/TimePosition.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/tjjj/com/hackuci2015/RunningQueue.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/tjjj/com/hackuci2015/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/tjjj/com/hackuci2015/ClipCell.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/tjjj/com/hackuci2015/CallClipsActivity.java" />
       </list>
     </option>
   </component>
@@ -1788,38 +1792,6 @@
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="values" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HackUCI2015" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HackUCI2015" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
             </PATH_ELEMENT>
@@ -1840,20 +1812,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="hackuci2015" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HackUCI2015" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="manifests" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidManifestsGroupNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -2054,7 +2012,7 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.tabs" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/speech_SpeechToText-SDK-Android/samples/SpeechRecoExample" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../AndroidLab" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="84B7N15A17001135" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="Nexus_4_API_17" />
     <property name="android.project.structure.last.selected" value="app" />
@@ -2261,7 +2219,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.7103918" sideWeight="0.11043873" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.11413969" sideWeight="0.8895613" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13458262" sideWeight="0.8895613" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -2298,7 +2256,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="3" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -2309,25 +2267,23 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="class#FinalResponseStatus#0;class#MainActivity#0" expanded="false" />
-            <element signature="class#PhoneCallListener#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#onCallStateChanged#0;class#PhoneCallListener#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#2442#2489#0" expanded="false" />
-            <element signature="e#2801#2882#0" expanded="false" />
+            <element signature="e#2609#2656#0" expanded="false" />
             <element signature="method#onCreate#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onCreateOptionsMenu#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onOptionsItemSelected#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#4461#4519#0" expanded="false" />
+            <element signature="e#5090#5148#0" expanded="false" />
             <element signature="method#callClick#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#clipsClick#0;class#MainActivity#0" expanded="false" />
             <element signature="method#lastCallClick#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#addListenerOnButton#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onPartialResponseReceived#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onFinalResponseReceived#0;class#MainActivity#0" expanded="false" />
             <element signature="docComment;method#onIntentReceived#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onError#0;class#MainActivity#0" expanded="false" />
             <element signature="docComment;method#onAudioEvent#0;class#MainActivity#0" expanded="false" />
             <element signature="docComment;class#RecognitionTask#0;class#MainActivity#0" expanded="false" />
+            <element signature="class#RecognitionTask#0;class#MainActivity#0" expanded="false" />
             <element signature="method#RecognitionTask#0;class#RecognitionTask#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#doInBackground#0;class#RecognitionTask#0;class#MainActivity#0" expanded="false" />
             <element signature="method#initializeRecoClient#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#11534#11575#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2368,25 +2324,23 @@
           <caret line="50" column="5" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
           <folding>
             <element signature="class#FinalResponseStatus#0;class#MainActivity#0" expanded="false" />
-            <element signature="class#PhoneCallListener#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#onCallStateChanged#0;class#PhoneCallListener#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#2442#2489#0" expanded="false" />
-            <element signature="e#2801#2882#0" expanded="false" />
+            <element signature="e#2609#2656#0" expanded="false" />
             <element signature="method#onCreate#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onCreateOptionsMenu#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onOptionsItemSelected#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#4461#4519#0" expanded="false" />
+            <element signature="e#5090#5148#0" expanded="false" />
             <element signature="method#callClick#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#clipsClick#0;class#MainActivity#0" expanded="false" />
             <element signature="method#lastCallClick#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#addListenerOnButton#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onPartialResponseReceived#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onFinalResponseReceived#0;class#MainActivity#0" expanded="false" />
             <element signature="docComment;method#onIntentReceived#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onError#0;class#MainActivity#0" expanded="false" />
             <element signature="docComment;method#onAudioEvent#0;class#MainActivity#0" expanded="false" />
             <element signature="docComment;class#RecognitionTask#0;class#MainActivity#0" expanded="false" />
+            <element signature="class#RecognitionTask#0;class#MainActivity#0" expanded="false" />
             <element signature="method#RecognitionTask#0;class#RecognitionTask#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#doInBackground#0;class#RecognitionTask#0;class#MainActivity#0" expanded="false" />
             <element signature="method#initializeRecoClient#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#11534#11575#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2443,25 +2397,23 @@
           <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
           <folding>
             <element signature="class#FinalResponseStatus#0;class#MainActivity#0" expanded="false" />
-            <element signature="class#PhoneCallListener#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#onCallStateChanged#0;class#PhoneCallListener#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#2442#2489#0" expanded="false" />
-            <element signature="e#2801#2882#0" expanded="false" />
+            <element signature="e#2609#2656#0" expanded="false" />
             <element signature="method#onCreate#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onCreateOptionsMenu#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onOptionsItemSelected#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#4461#4519#0" expanded="false" />
+            <element signature="e#5090#5148#0" expanded="false" />
             <element signature="method#callClick#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#clipsClick#0;class#MainActivity#0" expanded="false" />
             <element signature="method#lastCallClick#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#addListenerOnButton#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onPartialResponseReceived#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onFinalResponseReceived#0;class#MainActivity#0" expanded="false" />
             <element signature="docComment;method#onIntentReceived#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onError#0;class#MainActivity#0" expanded="false" />
             <element signature="docComment;method#onAudioEvent#0;class#MainActivity#0" expanded="false" />
             <element signature="docComment;class#RecognitionTask#0;class#MainActivity#0" expanded="false" />
+            <element signature="class#RecognitionTask#0;class#MainActivity#0" expanded="false" />
             <element signature="method#RecognitionTask#0;class#RecognitionTask#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#doInBackground#0;class#RecognitionTask#0;class#MainActivity#0" expanded="false" />
             <element signature="method#initializeRecoClient#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#11534#11575#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2495,16 +2447,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/tjjj/com/hackuci2015/CallClipsActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="39" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
-          <folding>
-            <element signature="e#694#704#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_call_clips.xml">
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2525,14 +2467,6 @@
       </provider>
       <provider editor-type-id="android-designer">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/tjjj/com/hackuci2015/ClipCell.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
@@ -2631,31 +2565,90 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/tjjj/com/hackuci2015/TimePosition.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="29" selection-start-line="0" selection-start-column="29" selection-end-line="0" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/tjjj/com/hackuci2015/RunningQueue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.24186991">
+          <caret line="7" column="30" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
+          <folding>
+            <element signature="method#RunningQueue#0;class#RunningQueue#0" expanded="false" />
+            <element signature="method#insertAndRemoveElement#0;class#RunningQueue#0" expanded="false" />
+            <element signature="method#insertElement#0;class#RunningQueue#0" expanded="false" />
+            <element signature="method#removeElement#0;class#RunningQueue#0" expanded="false" />
+            <element signature="docComment;method#main#0;class#RunningQueue#0" expanded="false" />
+            <element signature="method#main#0;class#RunningQueue#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/tjjj/com/hackuci2015/Trim.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.26254827">
+          <caret line="11" column="59" selection-start-line="11" selection-start-column="59" selection-end-line="11" selection-end-column="59" />
+          <folding>
+            <element signature="e#975#989#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/tjjj/com/hackuci2015/ClipCell.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="48" column="25" selection-start-line="48" selection-start-column="25" selection-end-line="48" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#445#446#0" expanded="true" />
+            <element signature="e#472#473#0" expanded="true" />
+            <element signature="e#770#771#0" expanded="true" />
+            <element signature="e#799#800#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/tjjj/com/hackuci2015/CallClipsActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+          <folding>
+            <element signature="class#1065:2133" expanded="false" />
+            <element signature="method#ClipAdapter#0;class#1065:2133" expanded="false" />
+            <element signature="method#getView#0;class#1065:2133" expanded="false" />
+            <element signature="e#2224#2455#0" expanded="true" />
+            <element signature="e#2454#2455#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/tjjj/com/hackuci2015/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33739838">
-          <caret line="296" column="20" selection-start-line="296" selection-start-column="20" selection-end-line="296" selection-end-column="20" />
+        <state vertical-scroll-proportion="2.8354166">
+          <caret line="181" column="59" selection-start-line="181" selection-start-column="59" selection-end-line="181" selection-end-column="59" />
           <folding>
             <element signature="class#FinalResponseStatus#0;class#MainActivity#0" expanded="false" />
-            <element signature="class#PhoneCallListener#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#onCallStateChanged#0;class#PhoneCallListener#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#2442#2489#0" expanded="false" />
-            <element signature="e#2801#2882#0" expanded="false" />
+            <element signature="e#2609#2656#0" expanded="false" />
             <element signature="method#onCreate#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onCreateOptionsMenu#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onOptionsItemSelected#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#4461#4519#0" expanded="false" />
+            <element signature="e#5090#5148#0" expanded="false" />
             <element signature="method#callClick#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#clipsClick#0;class#MainActivity#0" expanded="false" />
             <element signature="method#lastCallClick#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#addListenerOnButton#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onPartialResponseReceived#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onFinalResponseReceived#0;class#MainActivity#0" expanded="false" />
             <element signature="docComment;method#onIntentReceived#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onError#0;class#MainActivity#0" expanded="false" />
             <element signature="docComment;method#onAudioEvent#0;class#MainActivity#0" expanded="false" />
             <element signature="docComment;class#RecognitionTask#0;class#MainActivity#0" expanded="false" />
+            <element signature="class#RecognitionTask#0;class#MainActivity#0" expanded="false" />
             <element signature="method#RecognitionTask#0;class#RecognitionTask#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#doInBackground#0;class#RecognitionTask#0;class#MainActivity#0" expanded="false" />
             <element signature="method#initializeRecoClient#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#11534#11575#0" expanded="true" />
           </folding>
         </state>
       </provider>

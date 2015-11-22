@@ -1,10 +1,18 @@
 package tjjj.com.hackuci2015;
 
+import android.content.Context;
+import android.media.MediaPlayer;
 import android.net.Uri;
 
 public class ClipCell {
     private String textTranslation, caller, timeCalled;
     private Uri clip;
+
+    public ClipCell(String translation, String caller, String timeCalled) {
+        this.textTranslation = translation;
+        this.caller = caller;
+        this.timeCalled = timeCalled;
+    }
 
     public Uri getClip() {
         return clip;
@@ -36,5 +44,17 @@ public class ClipCell {
 
     public void setTimeCalled(String timeCalled) {
         this.timeCalled = timeCalled;
+    }
+
+    public void playClip() {
+        //set up MediaPlayer
+        MediaPlayer mp = new MediaPlayer();
+        try {
+            mp.setDataSource(clip.getPath());
+            mp.prepare();
+            mp.start();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

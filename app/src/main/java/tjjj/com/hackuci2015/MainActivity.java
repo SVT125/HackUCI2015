@@ -31,6 +31,8 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class MainActivity extends Activity implements ISpeechRecognitionServerEvents {
@@ -40,6 +42,9 @@ public class MainActivity extends Activity implements ISpeechRecognitionServerEv
     SpeechRecognitionMode m_recoMode;
     boolean m_isIntent;
     FinalResponseStatus isReceivedResponse = FinalResponseStatus.NotReceived;
+
+    private static String destinationPath = null;
+    private List<ClipCell> cellList = new ArrayList<ClipCell>();
 
     public enum FinalResponseStatus { NotReceived, OK, Timeout }
 
@@ -73,10 +78,19 @@ public class MainActivity extends Activity implements ISpeechRecognitionServerEv
                     isPhoneCalling = false;
 
                     Log.i("Processing","Conducting recognition...");
+                    String filename = MainActivity.this.getFilesDir().getPath() + "callRecording.wav";
 
                     //TODO - Progress dialog for processing the call file and splitting by silence...
+                    File file = new File(destinationPath);
+                    file.mkdirs();
+                    Trim.trimAudioClip(filename, destinationPath);
+                    cellList.clear();
+
+                    //TODO - Add specific call info
+                    for(File clip : file.listFiles())
+                        cellList.add(new ClipCell(clip.getPath(),null,null));
+
                     //TODO - Process the call!
-                    String filename = MainActivity.this.getFilesDir().getPath() + "callRecording.wav";
                     RecognitionTask doDataReco = new RecognitionTask(m_dataClient, m_recoMode, filename);
                     try
                     {
@@ -99,6 +113,8 @@ public class MainActivity extends Activity implements ISpeechRecognitionServerEv
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        destinationPath = this.getFilesDir().getPath() + "/finishedclips/";
 
         // m_recoMode can be SpeechRecognitionMode.ShortPhrase or SpeechRecognitionMode.LongDictation
         m_recoMode = SpeechRecognitionMode.ShortPhrase;
@@ -163,6 +179,7 @@ public class MainActivity extends Activity implements ISpeechRecognitionServerEv
 
     public void clipsClick(View v) {
         Intent intent = new Intent(this,CallClipsActivity.class);
+        intent.putExtra("destinationPath",destinationPath);
         startActivity(intent);
         finish();
     }
@@ -177,42 +194,6 @@ public class MainActivity extends Activity implements ISpeechRecognitionServerEv
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }
-
-    void addListenerOnButton()
-    {
-        /*
-        AlertDialog alertDialog;
-        alertDialog = new AlertDialog.Builder(appContext).create();
-        alertDialog.setTitle("Final Response");
-        EditText myEditText = (EditText) findViewById(R.id.editText1);
-
-        if (m_micClient != null) {
-            while (isReceivedResponse == FinalResponseStatus.NotReceived) {
-            }
-            m_micClient.endMicAndRecognition();
-            String msg = isReceivedResponse == FinalResponseStatus.OK ? "See TextBox below for response.  App Done" : "Timed out.  App Done";
-            alertDialog.setMessage(msg);
-            startButton.setEnabled(false);
-            try {
-                m_micClient.finalize();
-            } catch (Throwable e) {
-                myEditText.append(e + "\n");
-            }
-        } else if (m_dataClient != null) {
-            String msg = isReceivedResponse == FinalResponseStatus.OK ? "See TextBox below for response.  App Done" : "Timed out.  App Done";
-            alertDialog.setMessage(msg);
-            startButton.setEnabled(false);
-            try {
-                m_dataClient.finalize();
-            } catch (Throwable e) {
-                myEditText.append(e + "\n");
-            }
-        } else {
-            alertDialog.setMessage("Press Start first please!");
-        }
-        alertDialog.show();
-        */
     }
 
     public void onPartialResponseReceived(final String response) {
@@ -294,7 +275,7 @@ public class MainActivity extends Activity implements ISpeechRecognitionServerEv
                 do {
                     // Get  Audio data to send into byte buffer.
                     bytesRead = fileStream.read(buffer);
-                    
+
                     if (bytesRead > -1) {
                         // Send of audio data to service.
                         dataClient.sendAudio(buffer, bytesRead);

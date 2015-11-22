@@ -20,6 +20,7 @@ import java.util.List;
 
 public class CallClipsActivity extends Activity {
     ArrayList<ClipCell> cellList = new ArrayList<ClipCell>();
+    private static String destinationPath;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,9 +28,13 @@ public class CallClipsActivity extends Activity {
         setContentView(R.layout.activity_call_clips);
         ListView lv = (ListView)findViewById(R.id.listView);
 
+        destinationPath = getIntent().getStringExtra("destinationPath");
+
         class ClipAdapter extends ArrayAdapter<ClipCell> {
+            private ArrayList<ClipCell> cellList = new ArrayList<ClipCell>();
             public ClipAdapter(Context context, ArrayList<ClipCell> cellList) {
                 super(context,0,cellList);
+                this.cellList = cellList;
             }
             @Override
             public View getView(int position, View convertView, ViewGroup parent) {
@@ -52,7 +57,7 @@ public class CallClipsActivity extends Activity {
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                //TODO - Play the clip!
+                cellList.get(position).playClip();
             }
         });
     }
