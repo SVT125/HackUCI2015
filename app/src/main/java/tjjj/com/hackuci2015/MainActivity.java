@@ -44,7 +44,7 @@ public class MainActivity extends Activity implements ISpeechRecognitionServerEv
     FinalResponseStatus isReceivedResponse = FinalResponseStatus.NotReceived;
 
     private static String destinationPath = null;
-    private List<ClipCell> cellList = new ArrayList<ClipCell>();
+    private ArrayList<ClipCell> cellList = new ArrayList<ClipCell>();
 
     public enum FinalResponseStatus { NotReceived, OK, Timeout }
 
@@ -88,7 +88,9 @@ public class MainActivity extends Activity implements ISpeechRecognitionServerEv
 
                     //TODO - Add specific call info
                     for(File clip : file.listFiles())
-                        cellList.add(new ClipCell(clip.getPath(),null,null));
+                        cellList.add(new ClipCell(clip.getPath(),"","",""));
+
+                    Log.i("Cell length",""+cellList.size());
 
                     //TODO - Process the call!
                     RecognitionTask doDataReco = new RecognitionTask(m_dataClient, m_recoMode, filename);
@@ -155,7 +157,7 @@ public class MainActivity extends Activity implements ISpeechRecognitionServerEv
         }
 
         recorder = WAVAudioRecorder.getInstance(false);
-            File file = new File(this.getFilesDir().getPath() + "callRecording.wav");
+        File file = new File(this.getFilesDir().getPath() + "callRecording.wav");
         recorder.setOutputFile(file.getAbsolutePath());
         recorder.prepare();
 
@@ -178,8 +180,9 @@ public class MainActivity extends Activity implements ISpeechRecognitionServerEv
     }
 
     public void clipsClick(View v) {
-        Intent intent = new Intent(this,CallClipsActivity.class);
+        Intent intent = new Intent(this, CallClipsActivity.class);
         intent.putExtra("destinationPath",destinationPath);
+        intent.putParcelableArrayListExtra("cellList",cellList);
         startActivity(intent);
         finish();
     }
@@ -226,6 +229,7 @@ public class MainActivity extends Activity implements ISpeechRecognitionServerEv
 
     public void onError(final int errorCode, final String response)
     {
+        Log.e("ERROR READ",""+errorCode+"|"+response);
         final CharSequence text = errorCode + " " + response + "\n";
         final int duration = Toast.LENGTH_SHORT;
 
