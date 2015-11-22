@@ -28,6 +28,7 @@ import com.microsoft.projectoxford.speechrecognition.SpeechRecognitionServiceFac
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.concurrent.TimeUnit;
@@ -85,7 +86,9 @@ public class MainActivity extends Activity implements ISpeechRecognitionServerEv
                     {
                         doDataReco.cancel(true);
                         isReceivedResponse = FinalResponseStatus.Timeout;
+                        e.printStackTrace();
                     }
+
                 } else
                     Log.i("Calling","Fell through the phone call ending");
             }
@@ -135,8 +138,8 @@ public class MainActivity extends Activity implements ISpeechRecognitionServerEv
             recorder = null;
         }
 
-        recorder = new WAVAudioRecorder(false,0,0,0,0);
-        File file = new File(this.getFilesDir().getPath() + "callRecording.wav");
+        recorder = WAVAudioRecorder.getInstance(false);
+            File file = new File(this.getFilesDir().getPath() + "callRecording.wav");
         recorder.setOutputFile(file.getAbsolutePath());
         recorder.prepare();
 
@@ -212,7 +215,9 @@ public class MainActivity extends Activity implements ISpeechRecognitionServerEv
         */
     }
 
-    public void onPartialResponseReceived(final String response) { }
+    public void onPartialResponseReceived(final String response) {
+        Log.i("Partial phrase",response);
+    }
 
     public void onFinalResponseReceived(final RecognitionResult response)
     {
@@ -225,8 +230,11 @@ public class MainActivity extends Activity implements ISpeechRecognitionServerEv
 
         if (!isFinalDicationMessage) {
             //TODO - Results found here! For now, log out the phrases and their confidences.
-            for(RecognizedPhrase phrase : response.Results)
-                Log.i("Phrase",phrase.DisplayText + "|" + phrase.Confidence);
+            Log.i("Result length",""+response.Results.length);
+            for (int i = 0; i < response.Results.length; i++) {
+                Log.i("Phrase",response.Results[i].Confidence +
+                        "|" + response.Results[i].DisplayText);
+            }
         }
     }
 
@@ -279,14 +287,14 @@ public class MainActivity extends Activity implements ISpeechRecognitionServerEv
         @Override
         protected Void doInBackground(Void... params) {
             try {
+                //TODO - Clean up!
                 InputStream fileStream = new FileInputStream(filename);
                 int bytesRead = 0;
                 byte[] buffer = new byte[1024];
-
                 do {
                     // Get  Audio data to send into byte buffer.
                     bytesRead = fileStream.read(buffer);
-
+                    
                     if (bytesRead > -1) {
                         // Send of audio data to service.
                         dataClient.sendAudio(buffer, bytesRead);
@@ -300,7 +308,6 @@ public class MainActivity extends Activity implements ISpeechRecognitionServerEv
             finally {
                 dataClient.endAudio();
             }
-
             return null;
         }
     }
