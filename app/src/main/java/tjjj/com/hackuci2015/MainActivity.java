@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
+import android.provider.MediaStore;
 import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
 import android.util.Log;
@@ -32,6 +33,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -42,6 +44,8 @@ public class MainActivity extends Activity implements ISpeechRecognitionServerEv
     SpeechRecognitionMode m_recoMode;
     boolean m_isIntent;
     FinalResponseStatus isReceivedResponse = FinalResponseStatus.NotReceived;
+    int currentIndex;
+    List<File> files;
 
     private static String destinationPath = null;
     private ArrayList<ClipCell> cellList = new ArrayList<ClipCell>();
@@ -78,36 +82,44 @@ public class MainActivity extends Activity implements ISpeechRecognitionServerEv
                     isPhoneCalling = false;
 
                     Log.i("Processing","Conducting recognition...");
-                    String filename = MainActivity.this.getFilesDir().getPath() + "callRecording.wav";
-
-                    //TODO - Progress dialog for processing the call file and splitting by silence...
-                    File file = new File(destinationPath);
-                    file.mkdirs();
-                    Trim.trimAudioClip(filename, destinationPath);
-                    cellList.clear();
-
-                    //TODO - Add specific call info
-                    for(File clip : file.listFiles())
-                        cellList.add(new ClipCell(clip.getPath(),"","",""));
-
-                    Log.i("Cell length",""+cellList.size());
-
-                    //TODO - Process the call!
-                    RecognitionTask doDataReco = new RecognitionTask(m_dataClient, m_recoMode, filename);
-                    try
-                    {
-                        doDataReco.execute().get(m_waitSeconds, TimeUnit.SECONDS);
-                    }
-                    catch (Exception e)
-                    {
-                        doDataReco.cancel(true);
-                        isReceivedResponse = FinalResponseStatus.Timeout;
-                        e.printStackTrace();
-                    }
+                    feedCalls();
 
                 } else
                     Log.i("Calling","Fell through the phone call ending");
             }
+        }
+    }
+
+    public void feedCalls() {
+        //Reset if we have another call
+        currentIndex = 0;
+        String filename = MainActivity.this.getFilesDir().getPath() + "callRecording.wav";
+
+        //TODO - Progress dialog for processing the call file and splitting by silence...
+        File file = new File(destinationPath);
+        file.mkdirs();
+        Trim.trimAudioClip(filename, destinationPath);
+        cellList.clear();
+
+        //TODO - Add specific call info
+        files = Arrays.asList(file.listFiles());
+        for(File clip : file.listFiles()) {
+            processCall(clip.getPath());
+        }
+    }
+
+    public void processCall(final String path) {
+        //TODO - Process the call!
+        RecognitionTask doDataReco = new RecognitionTask(m_dataClient, m_recoMode, path);
+        try
+        {
+            doDataReco.execute().get(m_waitSeconds, TimeUnit.SECONDS);
+        }
+        catch (Exception e)
+        {
+            doDataReco.cancel(true);
+            isReceivedResponse = FinalResponseStatus.Timeout;
+            e.printStackTrace();
         }
     }
 
@@ -200,7 +212,7 @@ public class MainActivity extends Activity implements ISpeechRecognitionServerEv
     }
 
     public void onPartialResponseReceived(final String response) {
-        Log.i("Partial phrase",response);
+        Log.i("Partial phrase", response);
     }
 
     public void onFinalResponseReceived(final RecognitionResult response)
@@ -212,14 +224,19 @@ public class MainActivity extends Activity implements ISpeechRecognitionServerEv
         if ((m_recoMode == SpeechRecognitionMode.ShortPhrase) || isFinalDicationMessage)
             this.isReceivedResponse = FinalResponseStatus.OK;
 
+        String finalResult = "";
+        Integer best = Integer.MIN_VALUE;
         if (!isFinalDicationMessage) {
             //TODO - Results found here! For now, log out the phrases and their confidences.
-            Log.i("Result length",""+response.Results.length);
             for (int i = 0; i < response.Results.length; i++) {
-                Log.i("Phrase",response.Results[i].Confidence +
-                        "|" + response.Results[i].DisplayText);
+                if(response.Results[i].Confidence.getValue() > best) {
+                    best = response.Results[i].Confidence.getValue();
+                    finalResult = response.Results[i].DisplayText;
+                }
             }
         }
+
+        cellList.add(new ClipCell(files.get(currentIndex++).getPath(), finalResult, "", ""));
     }
 
     /**
