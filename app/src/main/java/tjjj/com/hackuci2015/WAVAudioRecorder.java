@@ -146,6 +146,7 @@ public class WAVAudioRecorder
             }
             catch (IOException e)
             {
+                e.printStackTrace();
                 Log.e(WAVAudioRecorder.class.getName(), "Error occured in updateListener, recording is aborted");
                 //stop();
             }

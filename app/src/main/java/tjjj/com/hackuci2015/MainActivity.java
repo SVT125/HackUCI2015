@@ -169,10 +169,9 @@ public class MainActivity extends Activity implements ISpeechRecognitionServerEv
         }
 
         recorder = WAVAudioRecorder.getInstance(false);
+        recorder.prepare();
         File file = new File(this.getFilesDir().getPath() + "callRecording.wav");
         recorder.setOutputFile(file.getAbsolutePath());
-        recorder.prepare();
-
         recorder.start();
 
         PhoneCallListener phoneListener = new PhoneCallListener();
@@ -212,7 +211,6 @@ public class MainActivity extends Activity implements ISpeechRecognitionServerEv
     }
 
     public void onPartialResponseReceived(final String response) {
-        Log.i("Partial phrase", response);
     }
 
     public void onFinalResponseReceived(final RecognitionResult response)

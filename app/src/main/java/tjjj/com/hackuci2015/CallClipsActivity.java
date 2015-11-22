@@ -49,7 +49,7 @@ public class CallClipsActivity extends Activity {
 
                 TextView translationView = (TextView)convertView.findViewById(R.id.translation_text),
                         infoView = (TextView)convertView.findViewById(R.id.info_text);
-                translationView.setText("Cell " + Integer.toString(position+1));//translationView.setText(cell.getTextTranslation());
+                translationView.setText(cell.getTextTranslation());
 
                 String description = cell.getCaller() + "|" + cell.getTimeCalled();
                 infoView.setText(description);
